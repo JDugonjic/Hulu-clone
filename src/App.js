@@ -13,9 +13,10 @@ function App() {
     <div className="app">
       <Header />
 
-      <Nav setSelectedOption={setSelectedOption}/>
+      <Nav setSelectedOption={setSelectedOption} />
 
       <Results selectedOption={selectedOption} />
+      <div className="app__footer"></div>
     </div>
   );
 }

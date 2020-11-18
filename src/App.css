@@ -2,3 +2,18 @@
   width: 100vw;
   background-image: linear-gradient(to right, #051421, #042727);
 }
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.app::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.app {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.app__footer {
+  height: 70px;
+}
