@@ -1,21 +1,33 @@
 import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState } from "react";
 import "./App.css";
 import Header from "./Header";
 import Nav from "./Nav";
 import requests from "./requests";
 import Results from "./Results";
+import PlayVideo from "./PlayVideo";
 
 function App() {
   const [selectedOption, setSelectedOption] = useState(requests.fetchTrending);
 
   return (
     <div className="app">
-      <Header />
+      <Router>
+        <Switch>
+          <Route path="/play">
+            <PlayVideo />
+          </Route>
 
-      <Nav setSelectedOption={setSelectedOption} />
+          <Route path="/">
+            <Header />
 
-      <Results selectedOption={selectedOption} />
+            <Nav setSelectedOption={setSelectedOption} />
+
+            <Results selectedOption={selectedOption} />
+          </Route>
+        </Switch>
+      </Router>
       <div className="app__footer"></div>
     </div>
   );
