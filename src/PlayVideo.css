@@ -46,6 +46,7 @@
 }
 
 .playVideo__close > button {
+  display: flex;
   justify-content: right;
   color: white;
   font-size: 20px;
@@ -58,4 +59,8 @@
 .playVideo__close > button:hover {
   opacity: 1;
   transform: scale(1.2);
+}
+.playVideo__close {
+  display: flex;
+  justify-content: flex-end;
 }

@@ -14,6 +14,7 @@
 
 .videoCard:hover {
   transform: scale(1.09);
+  cursor: pointer;
 }
 
 .videoCard > h2 {
@@ -27,4 +28,3 @@
 .videoCard:hover > .videoCard__stats {
   display: inline;
 }
-
