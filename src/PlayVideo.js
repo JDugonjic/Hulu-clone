@@ -3,10 +3,8 @@ import "./PlayVideo.css";
 import YouTube from "react-youtube";
 import movieTrailer from "movie-trailer";
 import { useStateValue } from "./StateProvider";
-import CancelRoundedIcon from "@material-ui/icons/CancelRounded";
 import { Button } from "@material-ui/core";
-import { useHistory } from "react-router-dom";
-
+import { useHistory, useParams } from "react-router-dom";
 const opts = {
   playerVars: {
     height: "100%",
@@ -19,6 +17,7 @@ function PlayVideo() {
   const [trailerUrl, setTrailerUrl] = useState("");
   const [{ _movie }, dispatch] = useStateValue();
   const history = useHistory();
+  const { movieTitle } = useParams();
 
   useEffect(() => {
     if (trailerUrl) {
@@ -33,22 +32,25 @@ function PlayVideo() {
     }
   }, [_movie]);
   return (
-    <div className="playVideo">
-      <div className="playVideo__close">
-        <Button
-          onClick={() => history.push("/")}
-         
-        >X</ Button>
-      </div>
+    
+      <div className="playVideo">
+        <div className="playVideo__close">
+          <Button onClick={() => history.push("/")}>X</Button>
+        </div>
 
-      <div className="playVideo__player">
-        <YouTube className="youtube__player" videoId={trailerUrl} opts={opts} />
+        <div className="playVideo__player">
+          <YouTube
+            className="youtube__player"
+            videoId={trailerUrl}
+            opts={opts}
+          />
+        </div>
+        <div className="playVideo__info">
+          <h2>{_movie?.title}</h2>
+          <p>{_movie?.overview}</p>
+        </div>
       </div>
-      <div className="playVideo__info">
-        <h2>{_movie?.title}</h2>
-        <p>{_movie?.overview}</p>
-      </div>
-    </div>
+    
   );
 }
 

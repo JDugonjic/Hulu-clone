@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Nav.css";
 import requests from "./requests";
 
 function Nav({ setSelectedOption }) {
+
+
+
   return (
     <div className="nav">
-      <h2 onClick={() => setSelectedOption(requests.fetchTrending)}>
+      <h2 onClick={() => setSelectedOption(requests.fetchTrending)} >
         Trending
       </h2>
       <h2 onClick={() => setSelectedOption(requests.fetchTopRated)}>
@@ -25,7 +28,6 @@ function Nav({ setSelectedOption }) {
       </h2>
       <h2 onClick={() => setSelectedOption(requests.fetchMistery)}>Mystery</h2>
       <h2 onClick={() => setSelectedOption(requests.fetchSciFi)}>Sci-Fi</h2>
-      <h2 onClick={() => setSelectedOption(requests.fetchWestern)}>Western</h2>
       <h2 onClick={() => setSelectedOption(requests.fetchAnimation)}>
         Animation
       </h2>
