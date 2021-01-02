@@ -15,7 +15,7 @@ const opts = {
 
 function PlayVideo() {
   const [trailerUrl, setTrailerUrl] = useState("");
-  const [{ _movie }, dispatch] = useStateValue();
+  const [{ _movie, selectedCategory }, dispatch] = useStateValue();
   const history = useHistory();
   const { movieTitle } = useParams();
 
@@ -32,25 +32,23 @@ function PlayVideo() {
     }
   }, [_movie]);
   return (
-    
-      <div className="playVideo">
-        <div className="playVideo__close">
-          <Button onClick={() => history.push("/")}>X</Button>
-        </div>
-
-        <div className="playVideo__player">
-          <YouTube
-            className="youtube__player"
-            videoId={trailerUrl}
-            opts={opts}
-          />
-        </div>
-        <div className="playVideo__info">
-          <h2>{_movie?.title}</h2>
-          <p>{_movie?.overview}</p>
-        </div>
+    <div className="playVideo">
+      <div className="playVideo__close">
+        <Button
+          onClick={() => history.push(`/${selectedCategory}`)}
+        >
+          X
+        </Button>
       </div>
-    
+
+      <div className="playVideo__player">
+        <YouTube className="youtube__player" videoId={trailerUrl} opts={opts} />
+      </div>
+      <div className="playVideo__info">
+        <h2>{_movie?.title}</h2>
+        <p>{_movie?.overview}</p>
+      </div>
+    </div>
   );
 }
 

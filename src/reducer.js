@@ -11,6 +11,12 @@ const reducer = (state, action) => {
         ...state,
         _movie: action._movie,
       };
+
+    case "SET_CATEGORY":
+      return {
+        ...state,
+        selectedCategory: action.selectedCategory,
+      };
     default:
       return state;
   }

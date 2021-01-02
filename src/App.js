@@ -15,7 +15,7 @@ function App() {
     <div className="app">
       <Router>
         <Switch>
-          <Route path="/play/:movieTitle">
+          <Route path="/play/:selectedCategory/:movieTitle">
             <PlayVideo />
           </Route>
 
