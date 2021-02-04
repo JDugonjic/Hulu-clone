@@ -1,15 +1,17 @@
-.videoCard {
-  color: white;
-  width: 500px;
-  height: 400px;
-  padding: 20px;
-  transition: transform 100ms;
-}
+@media (min-width: 500px) {
+  .videoCard {
+    color: white;
+    width: 500px;
+    height: 400px;
+    padding: 20px;
+    transition: transform 100ms;
+  }
 
-.videoCard > img {
-  height: 300px;
-  object-fit: contain;
-  width: 500px;
+  .videoCard > img {
+    height: 300px;
+    object-fit: contain;
+    width: 500px;
+  }
 }
 
 .videoCard:hover {
@@ -31,4 +33,20 @@
 
 a {
   text-decoration: none !important;
+}
+
+@media (max-width: 499px) {
+  .videoCard {
+    width: 100%;
+    color: white;
+  }
+
+  .videoCard > img {
+    width: 100%;
+    object-fit: contain;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
 }

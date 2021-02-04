@@ -99,14 +99,14 @@ function Nav({ setSelectedOption }) {
           Sci-Fi
         </h2>
       </NavLink>
-      <NavLink to="/animation" activeClassName="nav__active">
+      <NavLink to="/western" activeClassName="nav__active">
         <h2
           onClick={() => {
-            setSelectedOption(requests.fetchAnimation);
-            setCategory("animation");
+            setSelectedOption(requests.fetchWestern);
+            setCategory("western");
           }}
         >
-          Animation
+          Western
         </h2>
       </NavLink>
       <NavLink to="/tvMovies" activeClassName="nav__active">

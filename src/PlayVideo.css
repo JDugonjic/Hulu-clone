@@ -46,6 +46,7 @@
 }
 
 .playVideo__close > button {
+  top: 10px;
   display: flex;
   justify-content: right;
   color: white;
