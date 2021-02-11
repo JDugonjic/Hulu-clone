@@ -20,6 +20,10 @@ function PlayVideo() {
   const { movieTitle } = useParams();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
@@ -34,11 +38,7 @@ function PlayVideo() {
   return (
     <div className="playVideo">
       <div className="playVideo__close">
-        <Button
-          onClick={() => history.push(`/${selectedCategory}`)}
-        >
-          X
-        </Button>
+        <Button onClick={() => history.push(`/${selectedCategory}`)}>X</Button>
       </div>
 
       <div className="playVideo__player">
