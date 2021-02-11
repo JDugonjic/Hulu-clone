@@ -25,6 +25,41 @@
   height: 100%;
 }
 
+@media (max-width: 500px) {
+  .playVideo {
+    display: flex;
+    justify-content: flex-start;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    height: 100vh;
+    width: 80vw;
+  }
+  .playVideo__player {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    width: 80vw;
+    height: 20vh;
+    padding-bottom: 20px;
+  }
+
+  .youtube__player {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .playVideo__info {
+    height: 20vh;
+    width: 80vw;
+    padding-top: 10px;
+    color: white;
+  }
+}
+
 .playVideo__info {
   height: 20vh;
   width: 80vw;
