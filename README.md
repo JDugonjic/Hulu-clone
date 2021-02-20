@@ -1,4 +1,4 @@
-## Watch trailers for trending movies and more at https://hulu-clone-f6141.web.app/
+## Watch trailers for trending movies at https://hulu-clone-f6141.web.app/
 
 ## Getting Started with Create React App
 
